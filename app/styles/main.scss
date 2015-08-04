@@ -1,0 +1,155 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+body {
+  padding: 0;
+  background: #F1F1F1;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#app-container{
+  width: 500px;
+  margin: 20px auto;
+}
+
+$border-color: #f2f2f2;
+
+.page{
+
+  position: relative;
+
+  .nav{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    
+    .left-nav{
+      padding-top: 10px;
+      font-size: 22px;
+      font-weight: 100;
+      color: #FFF;
+      cursor: pointer;
+    }
+  }
+
+  .header{
+    height: 300px;
+    line-height: 350px;
+    font-size: 36px;
+    font-weight: 200;
+    color: whitesmoke;
+    display: block;
+    position: relative;
+
+    &::after {
+      content: "";
+      background: #E90974;
+      //background: url('http://lorempixel.com/500/300/food/');
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;   
+    }
+  }
+
+  .app-content{
+    background: #FFF;
+    height: 300px;
+    overflow-x: scroll;
+  }
+
+  #group-stats{
+
+    .group{
+      height: 100px;
+      text-align: center;
+      padding-top: 20px;
+      cursor: pointer;
+      border-bottom: 1px solid $border-color;
+
+      &:nth-child(odd){
+        border-right: 1px solid $border-color;
+      }
+
+      .group-name{
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      .group-count{
+        font-size: 10px;
+        font-weight: 200;
+      }
+
+      .group-color{
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  $completedColor: green;
+
+  #group-todo-list{
+
+    .todo{
+      width: 100%;
+      height: 75px;
+      border-bottom: 1px solid $border-color;
+      cursor: pointer;
+
+      &.completed{
+        background: #F5F5F5;
+        color: #999;
+      }
+
+      .todo-status{
+
+        width: 30px;
+        float: left;
+
+        .checkmark{
+          font-size: 16px;
+          margin-top: 10px;
+          color: #DEDEDE;
+
+          &.completed{
+            color: $completedColor;
+          }
+        }
+      }
+
+      .todo-content{
+
+        width: auto;
+        float: left;
+
+        .todo-text{
+          font-size: 18px;
+          font-weight: 300;
+        }
+
+        .todo-due-text{
+          font-size: 11px;
+          color: #666;
+          font-weight: 200;
+
+          &.completed{
+            color: #999;
+          }
+
+          .todo-due{
+            padding-left: 5px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

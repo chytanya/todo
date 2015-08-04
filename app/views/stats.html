@@ -1,0 +1,15 @@
+<div class="page" id="groups-page">
+	<div class="row">
+		<div class="col-xs-12 header">
+			My Groups
+		</div>
+	</div>
+
+	<div class="row app-content" id="group-stats">
+		<div class="col-xs-6 group" ng-repeat="group in groups" ng-click="goToGroupTasks(group.id)">
+			<div class="group-name">{{group.name}}</div>
+			<div class="group-count">{{group.todos.length}} ITEMS</div>
+			<div class="group-color" style="color:{{group.color}}">&mdash;</div>
+		</div>
+	</div>
+</div>

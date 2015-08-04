@@ -1,0 +1,30 @@
+<div class="page" id="groups-page">
+	<div class="nav">
+		<span class="glyphicon glyphicon-arrow-left left-nav" ng-click="goBack()"></span>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 header" style="background: {{group.color}}">
+			{{group.name}}
+		</div>
+	</div>
+
+	<div class="row app-content" id="group-todo-list">
+		<div ng-class="{'col-xs-12 todo' : true, 'completed' : todo.status }" ng-repeat="todo in group.todos" ng-click="goToGroupTasks(group.id)">
+			<div class="todo-status-bar">
+				&nbsp;
+			</div>
+			<div class="todo-status">
+				<span ng-class="{'glyphicon glyphicon-ok checkmark' : true, 'completed' : todo.status }"></span>
+			</div>
+			<div class="todo-content">
+				<div class="todo-text">{{todo.text}}</div>
+				<div class="todo-due-text" ng-hide="todo.status">
+					Due in<span class="todo-due">{{todo.due | amDifference : null : 'days' }} days</span>
+				</div>
+				<div class="todo-due-text completed" ng-show="todo.status">
+					Completed on {{todo.due | amDateFormat:'dddd, MMMM Do YYYY' }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
